@@ -11,6 +11,18 @@ module.exports = {
         filename: 'bundle.js',
         path: dist
     },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
     devServer: {
         contentBase: dist
     }

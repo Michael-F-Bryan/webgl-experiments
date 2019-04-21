@@ -1,7 +1,7 @@
 {
   "name": "webgl",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "private": true,
   "author": "Michael Bryan <michaelfbryan@gmail.com>",
   "license": "MIT OR Apache-2.0",
@@ -10,8 +10,13 @@
     "serve": "webpack-dev-server --open"
   },
   "devDependencies": {
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.4",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "three": "^0.103.0"
   }
 }
