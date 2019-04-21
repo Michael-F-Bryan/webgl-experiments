@@ -1,11 +1,17 @@
 {
   "name": "webgl",
   "version": "1.0.0",
+  "main": "src/index.js",
   "private": true,
   "author": "Michael Bryan <michaelfbryan@gmail.com>",
   "license": "MIT OR Apache-2.0",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server --open"
+  },
   "devDependencies": {
     "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
   }
 }
