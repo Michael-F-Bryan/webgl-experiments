@@ -1,7 +1,7 @@
 import {
     Scene, PerspectiveCamera, WebGLRenderer, SphereGeometry,
     MeshLambertMaterial, Mesh, AmbientLight, PointLight,
-} from 'three/src/Three.js';
+} from 'three/src/Three';
 import './master.css';
 
 const renderer = new WebGLRenderer({ antialias: true });
@@ -24,25 +24,28 @@ light.position.set(10, 0, 25);
 light.lookAt(ball.position);
 scene.add(light);
 
+function update() {
+    ball.rotation.x += 0.01;
+    ball.rotation.y += 0.01;
+}
 
-function updateDimensions() {
+function resize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 }
 
-function animate() {
-    requestAnimationFrame(animate);
-    ball.rotation.x += 0.01;
-    ball.rotation.y += 0.01;
+function gameLoop() {
+    requestAnimationFrame(gameLoop);
+    update();
     renderer.render(scene, camera);
 }
 
 function initialize() {
-    updateDimensions();
+    resize();
     document.body.appendChild(renderer.domElement);
-    requestAnimationFrame(animate);
+    requestAnimationFrame(gameLoop);
 }
 
 addEventListener('load', initialize);
-addEventListener('resize', updateDimensions);
+addEventListener('resize', resize);
