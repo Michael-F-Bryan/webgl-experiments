@@ -1,8 +1,10 @@
+
+import './master.css';
+
 import {
     Scene, PerspectiveCamera, WebGLRenderer, SphereGeometry,
     MeshLambertMaterial, Mesh, AmbientLight, PointLight,
-} from 'three/src/Three';
-import './master.css';
+} from 'three';
 
 const renderer = new WebGLRenderer({ antialias: true });
 renderer.setClearColor("#e5e5e5");
